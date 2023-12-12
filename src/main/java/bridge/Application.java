@@ -1,8 +1,12 @@
 package bridge;
 
+import bridge.controller.BridgeGameController;
+
 public class Application {
 
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        BridgeNumberGenerator generator = new BridgeRandomNumberGenerator();
+        BridgeGameController bridgeGameController = new BridgeGameController(generator);
+        bridgeGameController.gameStart();
     }
 }

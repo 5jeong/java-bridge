@@ -4,10 +4,12 @@ import bridge.util.ConvertUtil;
 import java.util.regex.Pattern;
 
 public class InputViewValidator {
-    private static final String MENU_AND_COUNT_REGEX = "";
     private static final String NUMBER_REGEX = "[0-9]+";
     private static final String MOVE_COMMAND_REGEX = "[U|D]";
     private static final String GAME_COMMAND_REGEX = "[R|Q]";
+    private static final int MINIMUM_BRIDGE_SIZE = 3;
+    private static final int MAXIMUM_BRIDGE_SIZE = 20;
+
 
 
     public static void validateBirdgeSize(String bridgeSize) {
@@ -21,7 +23,7 @@ public class InputViewValidator {
 
     private static boolean isNotBirdgeSize(String bridgeSize) {
         int size = ConvertUtil.convertStringToInt(bridgeSize);
-        return size < 3 || size > 20;
+        return size < MINIMUM_BRIDGE_SIZE || size > MAXIMUM_BRIDGE_SIZE;
     }
 
     private static boolean isNotDigit(String bridgeSize) {
